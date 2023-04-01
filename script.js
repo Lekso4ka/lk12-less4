@@ -1,4 +1,4 @@
-const box = document.querySelector(".container");
+
 function createCard(cat, el = box) {
     const card = document.createElement("div");
     card.className = "card";
@@ -56,9 +56,6 @@ function deleteCard(id, el) {
             })
     }
 }
-
-const user = "lk12";
-const path = `https://cats.petiteweb.dev/api/single/${user}`;
 
 /*
     AJAX - отправить запрос на другой сервис (сервер) без перезагрузки страницы (fetch / xhr - XmlHttpRequest / axios)
