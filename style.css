@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+h3 {
+    margin: 0;
+}
+.container {
+    background-color: coral;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: flex-start;
+    gap: 30px;
+}
+.card {
+    background-color: silver;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d1/3-Colored_Norwegian_Forest_Cat.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.default {
+    background-image: url(images/default.png);
+    background-size: contain;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dedede90;
+}
+.card>* {
+    position: relative;
+}
+.card__like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: crimson;
+    cursor: pointer;
+}
+.card h3 {
+    margin-bottom: 5px;
+}
+.empty {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty::after {
+    content: "...";
+}
+.modal-container {
+    position: fixed;
+    background-color: #0008;
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background-color: bisque;
+    padding: 30px;
+    border-radius: 8px;
+    width: calc(100% - 60px);
+    max-width: 300px;
+    max-height: calc(100% - 60px);
+}
+.modal form {
+    display: grid;
+    gap: 10px;
+}
+input, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid darkgray;
+    background-color: transparent;
+}
